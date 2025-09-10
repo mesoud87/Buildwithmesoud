@@ -159,3 +159,88 @@
   <script src="script.js"></script>
 </body>
 </html>
+/* Simple mobile-first styles */
+:root{
+  --accent:#0b74ff;
+  --dark:#0d1226;
+  --muted:#6b7280;
+  --bg:#fbfdff;
+  --radius:10px;
+  --max:1100px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--dark);line-height:1.5}
+.container{max-width:var(--max);margin:0 auto;padding:20px}
+.header-inner{display:flex;align-items:center;justify-content:space-between}
+.brand h1{margin:0;font-size:18px}
+.brand .sub{margin:0;font-size:13px;color:var(--muted)}
+.nav a{margin-left:14px;color:var(--dark);text-decoration:none;font-weight:600}
+.site-header{background:#fff;position:sticky;top:0;z-index:20;border-bottom:1px solid #eee}
+.hero{padding:36px 0}
+.hero-grid{display:grid;grid-template-columns:1fr;gap:20px;align-items:center}
+.hero-copy h2{font-size:26px;margin:0 0 10px}
+.hero-copy p{margin:0 0 16px;color:var(--muted)}
+.btn-primary{display:inline-block;background:var(--accent);color:#fff;padding:10px 16px;border-radius:8px;text-decoration:none;font-weight:700}
+.btn-outline{display:inline-block;border:2px solid #ddd;padding:8px 12px;border-radius:8px;text-decoration:none;color:var(--dark)}
+.hero-ctas a{margin-right:10px}
+.bullets{list-style:none;padding:0;margin:14px 0 0;display:flex;gap:12px;flex-wrap:wrap}
+.bullets li{background:#fff;padding:8px 10px;border-radius:8px;border:1px solid #eee;font-size:13px}
+.hero-image img{width:100%;height:auto;border-radius:12px;display:block}
+
+/* sections */
+.section{padding:28px 0}
+.how .steps-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.step{background:#fff;padding:16px;border-radius:12px;border:1px solid #eee}
+.team-grid{display:grid;grid-template-columns:1fr;gap:12px}
+.card{background:#fff;padding:16px;border-radius:12px;border:1px solid #eee}
+.faq-grid{display:grid;gap:12px}
+.contact .form{display:grid;gap:12px;max-width:720px}
+.form label{display:block;font-size:13px}
+.form input,.form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid #ddd;font-size:14px}
+.form-actions{display:flex;gap:10px;align-items:center}
+.form-msg{margin-top:12px;color:green}
+.small{font-size:13px;color:var(--muted)}
+
+.site-footer{padding:18px 0;background:#fff;border-top:1px solid #eee}
+.footer-inner{display:flex;justify-content:space-between;align-items:center}
+
+/* responsive */
+@media(min-width:760px){
+  .hero-grid{grid-template-columns:1fr 420px}
+  .how .steps-grid{grid-template-columns:repeat(2,1fr)}
+  .team-grid{grid-template-columns:repeat(3,1fr)}
+  .faq-grid{grid-template-columns:repeat(3,1fr)}
+}// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click', e=>{
+    const href = a.getAttribute('href');
+    if(href.length>1){
+      e.preventDefault();
+      document.querySelector(href).scrollIntoView({behavior:'smooth',block:'start'});
+    }
+  });
+});
+
+// Basic form handling (client-side)
+const form = document.getElementById('applyForm');
+const msg = document.getElementById('formMessage');
+const yearEl = document.getElementById('year');
+if(yearEl) yearEl.textContent = new Date().getFullYear();
+
+if(form){
+  form.addEventListener('submit', e=>{
+    e.preventDefault();
+    const data = new FormData(form);
+    const payload = {};
+    for(const [k,v] of data.entries()) payload[k]=v;
+    // For now, just compose an email link to send application via user's email client
+    const subject = encodeURIComponent('New Application from ' + (payload.name || 'Applicant'));
+    const body = encodeURIComponent(
+      `Name: ${payload.name}\nAge: ${payload.age}\nContact: ${payload.contact}\n\nMessage:\n${payload.message}`
+    );
+    const mailto = `mailto:youremail@example.com?subject=${subject}&body=${body}`;
+    window.location.href = mailto;
+    msg.textContent = 'Opening your email client to send the application. If nothing opens, email youremail@example.com directly.';
+  });
+}
