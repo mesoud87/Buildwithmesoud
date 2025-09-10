@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Build With Mesoud — Join the Team</title>
+  <meta name="description" content="Join a team of young, ambitious people building online income, sales skills, and leadership. Virtual training + mentorship. DM 'INFO' on Instagram." />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">
+        <h1>Build With Mesoud</h1>
+        <p class="sub">Virtual mentorship • Income skills • Team growth</p>
+      </div>
+      <nav class="nav">
+        <a href="#about">About</a>
+        <a href="#how">How it Works</a>
+        <a href="#team">Team</a>
+        <a href="#contact" class="btn-outline">Apply</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <h2>19 &amp; building a real business—no fluff. Want in?</h2>
+          <p>We mentor young people to build income, sales skills, and leadership — remote, flexible, and structured. DM “INFO” on Instagram to start.</p>
+          <div class="hero-ctas">
+            <a href="https://instagram.com/your_instagram_here" class="btn-primary" target="_blank" rel="noopener">DM “INFO” on Instagram</a>
+            <a href="#contact" class="btn-outline">Apply Now</a>
+          </div>
+          <ul class="bullets">
+            <li>Virtual training</li>
+            <li>Weekly mentorship calls</li>
+            <li>Team culture & recognition</li>
+          </ul>
+        </div>
+        <div class="hero-image">
+          <!-- Replace src with your photo or team image -->
+          <img src="https://images.unsplash.com/photo-1520975917340-3a4f8c0b0f9b?q=80&w=1200&auto=format&fit=crop&crop=faces" alt="Young entrepreneur working">
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about" class="section container">
+      <h3>About</h3>
+      <p>I mentor young people (18–25) who want to build a real income stream while learning business skills. We focus on sales, leadership, and financial literacy — with a clear path from rookie → team lead.</p>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section id="how" class="section how container">
+      <h3>How it Works</h3>
+      <div class="steps-grid">
+        <div class="step">
+          <h4>1. DM or Apply</h4>
+          <p>Reach out via Instagram DM or the form below to say you're interested.</p>
+        </div>
+        <div class="step">
+          <h4>2. Intro Call</h4>
+          <p>Quick 15-minute call to see if it’s a fit and explain the training path.</p>
+        </div>
+        <div class="step">
+          <h4>3. Training & Onboarding</h4>
+          <p>Structured mentorship, roleplay, and weekly group coaching.</p>
+        </div>
+        <div class="step">
+          <h4>4. Grow & Lead</h4>
+          <p>As you grow, you can lead teams and earn recognition + bonuses.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section id="team" class="section container">
+      <h3>Team Wins</h3>
+      <div class="team-grid">
+        <div class="card">
+          <p class="big">“I started at 19 and grew my income in 3 months.”</p>
+          <p class="meta">— Team Member</p>
+        </div>
+        <div class="card">
+          <p class="big">“Mentorship changed the way I approach goals.”</p>
+          <p class="meta">— Team Member</p>
+        </div>
+        <div class="card">
+          <p class="big">“Flexible hours + real skills.”</p>
+          <p class="meta">— Team Member</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section container" id="faq">
+      <h3>FAQ</h3>
+      <div class="faq-grid">
+        <div>
+          <strong>Do I need experience?</strong>
+          <p>No — training is provided. Bring motivation and effort.</p>
+        </div>
+        <div>
+          <strong>Is this a remote role?</strong>
+          <p>Yes — you can work from anywhere with Wi-Fi.</p>
+        </div>
+        <div>
+          <strong>What’s the time commitment?</strong>
+          <p>Flexible — we recommend consistent effort (a few hours/day while training).</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT / APPLY -->
+    <section id="contact" class="section contact container">
+      <h3>Apply / Contact</h3>
+      <p>Fill the form or DM “INFO” on Instagram. I review every application.</p>
+
+      <form id="applyForm" class="form">
+        <label>
+          Full name
+          <input type="text" name="name" required placeholder="Your name">
+        </label>
+        <label>
+          Age
+          <input type="number" name="age" min="16" max="80" required placeholder="19">
+        </label>
+        <label>
+          Instagram handle or phone
+          <input type="text" name="contact" required placeholder="@yourhandle">
+        </label>
+        <label>
+          Short message
+          <textarea name="message" rows="4" placeholder="Why do you want to join?"></textarea>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="btn-primary">Submit Application</button>
+          <a href="mailto:youremail@example.com?subject=New%20Application" class="btn-outline">Email</a>
+        </div>
+        <p class="small">Or DM <strong>“INFO”</strong> on Instagram: <a href="https://instagram.com/your_instagram_here" target="_blank" rel="noopener">@your_instagram_here</a></p>
+      </form>
+
+      <div id="formMessage" class="form-msg" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> Build With Mesoud — Based in Ohio</p>
+      <div class="social">
+        <a href="https://instagram.com/your_instagram_here" target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
